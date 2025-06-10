@@ -1,10 +1,10 @@
 {
   "name": "split-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Split App backend for expense and settlement tracking",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
