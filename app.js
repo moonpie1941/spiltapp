@@ -12,6 +12,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root Route (for browser visits)
+app.get('/', (req, res) => {
+  res.send('🎉 Welcome to the Split App Backend! Use endpoints like /expenses, /balances, or /settlements.');
+});
+
 // Routes
 app.use('/', expenseRoutes);
 app.use('/', settlementRoutes);
@@ -29,7 +34,7 @@ app.use((err, req, res, next) => {
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(process.env.PORT, () => {
-      console.log(`Server running on http://localhost:${process.env.PORT}`);
+      console.log(`✅ Server running on http://localhost:${process.env.PORT}`);
     });
   })
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => console.error('❌ MongoDB connection error:', err));
